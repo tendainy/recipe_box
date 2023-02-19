@@ -19,6 +19,11 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
 
     if @recipe.save
+      tag_ids = params[:recipe][:tag_ids]
+      tag_ids.each do |tag_id|
+        recipe_tag = RecipeTag.new(recipe_id: @recipe.id, tag_id: tag_id)
+        recipe_tag.save
+      end
       redirect_to @recipe, notice: 'New Recipe successfully created'
     else
       render 'new'
@@ -44,7 +49,7 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :ingredients, :instructions)
+    params.require(:recipe).permit(:name, :ingredients, :instructions, tag_ids: [])
   end
 
   def find_recipe
