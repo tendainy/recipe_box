@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 # Recipes controller
 class RecipesController < ApplicationController
-  before_action :find_recipe, only: [:show, :edit, :update, :destory]
+  before_action :find_recipe, only: %i[show edit update destroy]
 
   def index
     @recipe = Recipe.all.order('created_at DESC')
@@ -12,6 +12,7 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
+    @tags = Tag.all
   end
 
   def create
@@ -43,7 +44,7 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:title ,:descriptions)
+    params.require(:recipe).permit(:name, :ingredients, :instructions)
   end
 
   def find_recipe
