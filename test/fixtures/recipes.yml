@@ -3,11 +3,11 @@
 one:
   name: MyString
   instructions: MyText
+  rating: 1
   ingredients: MyText
-  ratings: 1
 
 two:
   name: MyString
   instructions: MyText
+  rating: 1
   ingredients: MyText
-  ratings: 1

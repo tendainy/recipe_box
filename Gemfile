@@ -18,6 +18,8 @@ gem "puma", "~> 5.0"
 
 gem 'simple_form', '~> 5.2'
 
+gem 'pry', '~> 0.14.2'
+
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
 
