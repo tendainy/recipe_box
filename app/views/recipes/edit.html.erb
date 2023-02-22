@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Edit a Recipes</h1>
+  <%= form_with model: @recipe do |f| %>
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div>
+      <%= f.label :ingredients %>
+      <%= f.text_area :ingredients %>
+    </div>
+
+    <div>
+      <%= f.label :instructions %>
+      <%= f.text_area :instructions %>
+    </div>
+
+    <%= f.submit class: 'btn btn-primary' %>
+  <% end %>
+</div>

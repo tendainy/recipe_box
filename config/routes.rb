@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :recipes
   get 'recipes/new'
   get 'recipes/show'
+  get 'recipes/edit'
 end
