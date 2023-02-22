@@ -1,21 +1,27 @@
 <div class="container">
   <h1>Edit a Recipes</h1>
   <%= form_with model: @recipe do |f| %>
-    <div>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-    </div>
+  <div class="card">
+      <div class="card-body">
 
-    <div>
-      <%= f.label :ingredients %>
-      <%= f.text_area :ingredients %>
-    </div>
+        <div class='mb-3'>
+          <%= f.label :name, { class: "form-label"}   %>
+          <%= f.text_field :name, { class: "form-control", placeholder: " Recipe Name"} %>
+        </div>
 
-    <div>
-      <%= f.label :instructions %>
-      <%= f.text_area :instructions %>
-    </div>
+        <div class='mb-3'>
+          <%= f.label :ingredients, { class: "form-label"} %>
+          <%= f.text_area :ingredients, { class: "form-control", placeholder: "Ingredients" }  %>
+        </div>
 
-    <%= f.submit class: 'btn btn-primary' %>
-  <% end %>
+        <div class='mb-3'>
+          <%= f.label :instructions, { class: "form-label"} %>
+          <%= f.text_area :instructions,  { class: "form-control", placeholder: "Instructions" } %>
+        </div>
+
+        <%= f.submit class: 'btn btn-primary' %>
+      <% end %>
+
+    </div>
+  </div>
 </div>

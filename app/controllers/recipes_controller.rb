@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
   # before_action :recipe, only: %i[show edit update destroy]
 
   def index
-    @recipe = Recipe.all
+    @recipes = Recipe.all
   end
 
   def new
